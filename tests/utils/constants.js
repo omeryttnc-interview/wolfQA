@@ -1,4 +1,4 @@
-const TIME = {
+export const TIME = {
   SECOND: "second",
   SECONDS: "seconds",
   MINUTE: "minute",
@@ -7,8 +7,4 @@ const TIME = {
   HOURS: "hours",
   DAY: "day",
   DAYS: "days",
-};
-
-export default {
-  TIME,
 };
