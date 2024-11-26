@@ -1,7 +1,7 @@
 // EDIT THIS FILE TO COMPLETE ASSIGNMENT QUESTION 1
 import test, { expect } from "@playwright/test";
-import { assertTime } from "./utils";
-import HomePage from "../pages/HomePage";
+import { assertTime } from "../utils/test-utils";
+import HomePage from "../../pages/HomePage";
 
 test("should validate that EXACTLY the first 100 articles are sorted from newest to oldest", async ({
   page,

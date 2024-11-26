@@ -1,22 +1,23 @@
 import { expect } from "@playwright/test";
+import { TIME } from "./constants";
 
 export const assertTime = (timeList, isAll) => {
   let secondsList = [];
   let howManyTested = 0;
 
   timeList.map((item) => {
-    // to be able to identify I split time digit and time unit
+    // to be able to identify I split time digit and time unit ex: 2 hours ago
     const time = item.split(" ")[0];
     const unit = item.split(" ")[1];
 
     // and convert all time to second to have single unit to compare
-    if (unit == "second" || unit == "seconds") {
+    if (unit == TIME.SECOND || unit == TIME.SECONDS) {
       secondsList.push(time);
-    } else if (unit == "minute" || unit == "minutes") {
+    } else if (unit == TIME.MINUTE || unit == TIME.MINUTES) {
       secondsList.push(time * 60);
-    } else if (unit == "hour" || unit == "hours") {
+    } else if (unit == TIME.HOUR || unit == TIME.HOURS) {
       secondsList.push(time * 60 * 60);
-    } else if (unit == "day" || unit == "days") {
+    } else if (unit == TIME.DAY || unit == TIME.DAYS) {
       secondsList.push(time * 60 * 60 * 24);
     }
   });
